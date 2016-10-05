@@ -6,7 +6,7 @@ comments, along with the title and url.
 
 ## Usage
 
-    python path/to/directory language
+    python eulerscraper.py path/to/directory language
     
 The path to directory does not have to exist yet. If the script would
 overwrite any files, it asks for permission. Supported languages so far 
