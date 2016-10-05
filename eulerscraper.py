@@ -21,9 +21,11 @@ out_path, language = sys.argv[1:]
 
 ext, comment = LANGUAGES[language]
 
+print('Ensuring path exists: {}'.format(out_path))
 os.makedirs(out_path, exist_ok=True)
 
 for i in range(1, LAST_PROB + 1):
+    print('Fetching problem {} of {}...'.format(i, LAST_PROB))
     url = URL_ROOT.format(i)
 
     soup = BeautifulSoup(request.urlopen(url).read().decode())
@@ -43,6 +45,8 @@ for i in range(1, LAST_PROB + 1):
         usr_input = input('WARNING: {} already exists. Overwrite? [y]/n: ')
         if usr_input == 'n':
             continue
+
+    print('\tSaving problem at {}'.format(filepath))
 
     with open(filepath, 'w') as f:
         f.write('\n'.join(comment_text))
