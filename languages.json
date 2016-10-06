@@ -1,5 +1,6 @@
 {
     "javascript": [".js", "//"],
     "java": [".java", "//"],
-    "python": [".py", "#"]
+    "python": [".py", "#"],
+    "c": [".c", "//"]
 }
